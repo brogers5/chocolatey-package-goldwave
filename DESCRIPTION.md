@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
-  <metadata>
-    <id>goldwave</id>
-    <version>6.72</version>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.72</packageSourceUrl>
-    <owners>sublym0nal</owners>
-    <title>GoldWave Audio Editor</title>
-    <authors>GoldWave Inc.</authors>
-    <projectUrl>https://www.goldwave.com/goldwave.php</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-goldwave@3a976c93b87cd6475c3f452583e7b2d1e4223b1d/goldwave.png</iconUrl>
-    <copyright>Copyright © 2023 GoldWave® Inc.</copyright>
-    <licenseUrl>https://goldwave.com/help/desktop/GeneralInformation.html</licenseUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <docsUrl>https://goldwave.com/help/desktop/TableOfContents.html</docsUrl>
-    <mailingListUrl>https://goldwave.ca/forums/viewforum.php?f=7%26sid=4d6a4f76e738b634db6316ca39c796e1</mailingListUrl>
-    <tags>goldwave audio record editor mixer analysis convert trial shareware</tags>
-    <summary>Digital Audio Editing Software</summary>
-    <description><![CDATA[
+
 ---
 
 ### [choco://goldwave](choco://goldwave)
@@ -86,20 +67,3 @@ Many languages are supported including German (Deutsch), Spanish (Español), Fre
 ## Package Notes
 
 The uninstaller does not support a silent uninstallation option. This package depends on [AutoHotkey](https://community.chocolatey.org/packages/autohotkey.portable) to implement a best-effort workaround of scripting an unattended installation via GUI automation. GUI automation is not 100% reliable, and may occasionally fail or require manual input to complete.
-]]></description>
-    <releaseNotes>https://goldwave.ca/forums/viewforum.php?f=5</releaseNotes>
-    <dependencies>
-      <dependency id="autohotkey.portable" version="1.1.22.07" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="tools\chocolateybeforemodify.ps1" target="tools" />
-    <file src="tools\chocolateyinstall.ps1" target="tools" />
-    <file src="tools\chocolateyuninstall.ps1" target="tools" />
-    <file src="tools\uninstall_v1.ahk" target="tools" />
-    <file src="tools\uninstall_v2.ahk" target="tools" />
-    <file src="tools\InstallGoldWave*.exe" target="tools" />
-    <file src="tools\LICENSE.txt" target="tools" />
-    <file src="tools\VERIFICATION.txt" target="tools" />
-  </files>
-</package>

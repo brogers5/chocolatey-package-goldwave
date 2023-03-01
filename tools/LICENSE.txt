@@ -1,11 +1,29 @@
-﻿
-Note: Include this file if including binaries you have the right to distribute.
-Otherwise delete. this file.
+﻿From: https://goldwave.com/help/desktop/GeneralInformation.html
 
-===DELETE ABOVE THIS LINE AND THIS LINE===
+GoldWave ("the package") includes the following software and documentation:
 
-From: <insert applicable license url here>
+GoldWave.exe         GoldWave application file
+GWSpeed64.dll        Accelerated multithreaded code
+GoldWave.html        GoldWave manual layout
+GoldWaveManual.html  GoldWave manual
+Index.html           GoldWave manual index
+Style.css            GoldWave manual style
+Images (*.png;*.jpg) All images associated with this manual
+GWPreset.xml         Presets and shapes
+ReadMe.txt           Important information
+WhatsNew.txt         Revision history
+FLACFile.pig         FLAC file plug-in
+en.lang              English language File
+OggFile.pig          Ogg Vorbis file plug-in
+OpusFile.pig         Opus file plug-in
+QTFile.pig           QuickTime file plug-in
+WMAFile.pig          Windows Media Audio file plug-in
+GWVST32.pig          VST effect wrapper
+GWVSTBridge.pig      VST 64 bit to 32 bit bridge
+GWVST.html           GWVST manual
 
-LICENSE
+The package is provided as is, without warranty of any kind. GoldWave Inc. shall not be liable for damages of any kind. Use of this software indicates you agree to this.
 
-<Insert License Here>
+The package and this documentation are copyright © 2020 by GoldWave ® Inc. All rights reserved. This document and associated images may not be shown on a public website.
+
+Copies of the evaluation version of GoldWave may be given to anyone. Magazine and book publishers may include the evaluation version on cover and companion CDs and DVDs. Only the original GoldWave self-installing evaluation file may be distributed. This ensures everyone receives a complete and working copy. Distributing modified or incomplete copies is a violation of the copyright. Please note that GoldWave is not free software and should not be described as such.
