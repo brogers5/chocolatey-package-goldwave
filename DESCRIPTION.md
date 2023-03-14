@@ -66,4 +66,4 @@ Many languages are supported including German (Deutsch), Spanish (Español), Fre
 
 ## Package Notes
 
-The uninstaller does not support a silent uninstallation option. This package depends on [AutoHotkey](https://community.chocolatey.org/packages/autohotkey.portable) to implement a best-effort workaround of scripting an unattended installation via GUI automation. GUI automation is not 100% reliable, and may occasionally fail or require manual input to complete.
+The uninstaller does not support a silent uninstallation option. This package depends on [AutoHotkey](https://community.chocolatey.org/packages/autohotkey.portable) to implement a best-effort workaround of scripting an unattended uninstallation via GUI automation. GUI automation is not 100% reliable, and may occasionally fail or require manual input to complete.
