@@ -61,13 +61,10 @@ function global:au_GetLatest {
     $updatePage = Invoke-WebRequest -Uri $uri -UserAgent $userAgent -UseBasicParsing
 
     $version = [Regex]::Matches($updatePage.Content, "(\d+(\.\d+){1,3})").Groups[1].Value
-
     $downloadUri = 'https://goldwave.com/download.php?file=gw'
-    $downloadHeaders = Invoke-WebRequest -Uri $downloadUri -Method Head -UseBasicParsing
-    $fileName = $downloadHeaders.Headers['Content-Disposition'].Split('=')[1].Replace('"', '').Replace('.exe', '')
 
     return @{
-        FileName64 = $fileName
+        FileName64 = "InstallGoldWave$($version.Replace('.', ''))"
         FileType   = 'exe'
         Url64      = $downloadUri
         Version    = $version
