@@ -5,14 +5,12 @@ $toolsPath = Join-Path -Path $currentPath -ChildPath 'tools'
 
 function New-Snapshot {
     $seleniumModuleName = 'Selenium'
-    if (!(Get-Module -ListAvailable -Name $seleniumModuleName))
-    {
+    if (!(Get-Module -ListAvailable -Name $seleniumModuleName)) {
         Install-Module -Name $seleniumModuleName
     }
     Import-Module $seleniumModuleName
 
-    if (!(Test-Path -Path "$env:PROGRAMFILES\Mozilla Firefox\firefox.exe"))
-    {
+    if (!(Test-Path -Path "$env:PROGRAMFILES\Mozilla Firefox\firefox.exe")) {
         choco install firefox -y
     }
 
@@ -20,7 +18,7 @@ function New-Snapshot {
     Write-Host "Starting Selenium at $downloadUrl"
     $seleniumDriver = Start-SeFirefox $downloadUrl -Headless
     $Latest.ArchivedBinaryUrl = $seleniumDriver.Url
-    $Latest.DirectArchivedBinaryUrl = $Latest.ArchivedBinaryUrl -replace '(\d{14})/',"`$1if_/"
+    $Latest.DirectArchivedBinaryUrl = $Latest.ArchivedBinaryUrl -replace '(\d{14})/', "`$1if_/"
     $seleniumDriver.Dispose()
 }
 
@@ -36,22 +34,22 @@ function global:au_BeforeUpdate ($Package) {
 
 function global:au_SearchReplace {
     @{
-        'build.ps1' = @{
+        'build.ps1'                     = @{
             '(^\s*FileName64\s*=\s*)(''.*'')' = "`$1'$($Latest.FileName64.TrimEnd('.exe'))'"
-            '(^\s*Url64\s*=\s*)(''.*'')' = "`$1'$($Latest.DirectArchivedBinaryUrl)'"
+            '(^\s*Url64\s*=\s*)(''.*'')'      = "`$1'$($Latest.DirectArchivedBinaryUrl)'"
         }
         "$($Latest.PackageName).nuspec" = @{
             "(<packageSourceUrl>)[^<]*(</packageSourceUrl>)" = "`$1https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)`$2"
-            "(<copyright>)[^<]*(</copyright>)" = "`$1Copyright © $(Get-Date -Format yyyy) GoldWave® Inc.`$2"
+            "(<copyright>)[^<]*(</copyright>)"               = "`$1Copyright © $(Get-Date -Format yyyy) GoldWave® Inc.`$2"
         }
-        'tools\VERIFICATION.txt' = @{
-            '%binaryUrl%' = "$($Latest.Url64)"
+        'tools\VERIFICATION.txt'        = @{
+            '%binaryUrl%'         = "$($Latest.Url64)"
             '%archivedBinaryUrl%' = "$($Latest.ArchivedBinaryUrl)"
-            '%binaryFileName%' = "$($Latest.FileName64)"
-            '%checksumValue%' = "$($Latest.Checksum64)"
-            '%checksumType%' = "$($Latest.ChecksumType64.ToUpper())"
+            '%binaryFileName%'    = "$($Latest.FileName64)"
+            '%checksumValue%'     = "$($Latest.Checksum64)"
+            '%checksumType%'      = "$($Latest.ChecksumType64.ToUpper())"
         }
-        'tools\chocolateyinstall.ps1' = @{
+        'tools\chocolateyinstall.ps1'   = @{
             "(^[$]installerFileName\s*=\s*)('.*')" = "`$1'$($Latest.FileName64)'"
         }
     }
@@ -70,9 +68,9 @@ function global:au_GetLatest {
 
     return @{
         FileName64 = $fileName
-        FileType = 'exe'
-        Url64 = $downloadUri
-        Version = $version
+        FileType   = 'exe'
+        Url64      = $downloadUri
+        Version    = $version
     }
 }
 

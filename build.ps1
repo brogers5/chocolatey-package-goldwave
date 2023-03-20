@@ -7,9 +7,9 @@ $version = [Version] $nuspec.package.metadata.version
 
 $global:Latest = @{
     FileName64 = 'InstallGoldWave674'
-    FileType = 'exe'
-    Url64 = 'https://web.archive.org/web/20230320164634if_/https://goldwave.com/download.php?file=gw'
-    Version = $version
+    FileType   = 'exe'
+    Url64      = 'https://web.archive.org/web/20230320164634if_/https://goldwave.com/download.php?file=gw'
+    Version    = $version
 }
 
 Write-Host 'Downloading...'
