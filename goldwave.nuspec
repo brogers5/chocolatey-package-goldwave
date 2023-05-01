@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>goldwave</id>
-    <version>6.75</version>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.75</packageSourceUrl>
+    <version>6.76</version>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.76</packageSourceUrl>
     <owners>sublym0nal</owners>
     <title>GoldWave Audio Editor</title>
     <authors>GoldWave Inc.</authors>
