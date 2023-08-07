@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -37,7 +37,7 @@ elseif ($keys.Count -eq 0) {
 }
 elseif ($keys.Count -gt 1) {
   Write-Warning "$($keys.Count) matches found!"
-  Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
-  Write-Warning "Please alert package maintainer the following keys were matched:"
+  Write-Warning 'To prevent accidental data loss, no programs will be uninstalled.'
+  Write-Warning 'Please alert package maintainer the following keys were matched:'
   $keys | ForEach-Object { Write-Warning "- $($_.DisplayName)" }
 }
