@@ -6,9 +6,9 @@ $nuspecFileRelativePath = Join-Path -Path $currentPath -ChildPath 'goldwave.nusp
 $version = [Version] $nuspec.package.metadata.version
 
 $global:Latest = @{
-    FileName64 = 'InstallGoldWave676'
+    FileName64 = 'InstallGoldWave677'
     FileType   = 'exe'
-    Url64      = 'https://web.archive.org/web/20230501023435if_/https://goldwave.com/download.php?file=gw'
+    Url64      = 'https://web.archive.org/web/20230807180028if_/https://goldwave.com/download.php?file=gw'
     Version    = $version
 }
 
