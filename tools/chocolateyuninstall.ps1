@@ -41,3 +41,5 @@ elseif ($keys.Count -gt 1) {
   Write-Warning 'Please alert package maintainer the following keys were matched:'
   $keys | ForEach-Object { Write-Warning "- $($_.DisplayName)" }
 }
+
+Uninstall-BinFile -Name 'goldwave'
