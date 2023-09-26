@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>goldwave</id>
-    <version>6.77.0</version>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.77.0</packageSourceUrl>
+    <version>6.78.0</version>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.78.0</packageSourceUrl>
     <owners>sublym0nal</owners>
     <title>GoldWave Audio Editor</title>
     <authors>GoldWave Inc.</authors>
@@ -82,6 +82,10 @@ Many languages are supported including German (Deutsch), Spanish (Español), Fre
 * 192kHz, 24-Bit Quality
 * Detailed Built-in Help
 * HTML Manual
+
+## Package Parameters
+
+* `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
 ## Package Notes
 
