@@ -1,12 +1,3 @@
-
----
-
-### [choco://goldwave](choco://goldwave)
-
-To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](https://community.chocolatey.org/packages/choco-protocol-support)
-
----
-
 ## GoldWave
 
 **GoldWave** is a highly rated, professional digital audio editor that turns your computer or mobile device into a recording studio at your finger tips. Do everything from the simplest recording, editing, and mixing to the most sophisticated audio processing, restoration, enhancements, and conversions. With millions of downloads over 29 years, GoldWave is a widely used, trusted and dependable program. It is easy to learn and use and is fully accessible.
