@@ -2,7 +2,7 @@
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
-$installerFileName = 'InstallGoldWave680.exe'
+$installerFileName = 'InstallGoldWave683.exe'
 $filePath = Join-Path -Path $toolsDir -ChildPath $installerFileName
 $softwareNamePattern = 'GoldWave v*'
 

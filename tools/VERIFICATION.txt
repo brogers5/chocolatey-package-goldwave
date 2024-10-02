@@ -16,11 +16,11 @@ should be expected to invalidate a checksum verification for an older version wh
 As a workaround, this package's creation process includes the creation of a historical snapshot via
 the Internet Archive's Wayback Machine to create a permanent backup source.
 This snapshot can be accessed at the following URL:
-https://web.archive.org/web/20240123230755/https://goldwave.com/download.php?file=gw
+https://web.archive.org/web/20241002143011/https://goldwave.com/download.php?file=gw
 
 The following PowerShell command will print a calculated SHA256 hash:
 
-    (Get-FileHash -Path InstallGoldWave680.exe -Algorithm SHA256).Hash
+    (Get-FileHash -Path InstallGoldWave683.exe -Algorithm SHA256).Hash
 
 This command should be executed against an independently downloaded binary, as well
 as the copy distributed with the package. Both hash values should be identical. A
@@ -28,4 +28,4 @@ matching hash value should confirm that no corruption or tampering has occurred
 during this package's generation process.
 
 For reference, the following SHA256 hash was calculated during the package's automated creation:
-BF3C78D6F7878E0A6EF64B4793645F48E96AF9E446C0D30FC8EEDB7BACB7DA85
+E7A9A369CEE3694574D8AA4B628A295E32BD23648C7E62B8ACD54D9D4DDF507D

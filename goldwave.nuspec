@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>goldwave</id>
-    <version>6.80.0</version>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.80.0</packageSourceUrl>
+    <version>6.83.0</version>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-goldwave/tree/v6.83.0</packageSourceUrl>
     <owners>sublym0nal</owners>
     <title>GoldWave Audio Editor</title>
     <authors>GoldWave Inc.</authors>
@@ -17,16 +17,7 @@
     <mailingListUrl>https://goldwave.ca/forums/viewforum.php?f=7%26sid=4d6a4f76e738b634db6316ca39c796e1</mailingListUrl>
     <tags>goldwave audio record editor mixer analysis convert trial shareware</tags>
     <summary>Digital Audio Editing Software</summary>
-    <description><![CDATA[
----
-
-### [choco://goldwave](choco://goldwave)
-
-To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](https://community.chocolatey.org/packages/choco-protocol-support)
-
----
-
-## GoldWave
+    <description><![CDATA[## GoldWave
 
 **GoldWave** is a highly rated, professional digital audio editor that turns your computer or mobile device into a recording studio at your finger tips. Do everything from the simplest recording, editing, and mixing to the most sophisticated audio processing, restoration, enhancements, and conversions. With millions of downloads over 29 years, GoldWave is a widely used, trusted and dependable program. It is easy to learn and use and is fully accessible.
 
