@@ -6,7 +6,7 @@ $toolsPath = Join-Path -Path $currentPath -ChildPath 'tools'
 function New-Snapshot {
     $seleniumModuleName = 'Selenium'
     if (!(Get-Module -ListAvailable -Name $seleniumModuleName)) {
-        Install-Module -Name $seleniumModuleName
+        Install-Module -Name $seleniumModuleName -AllowPrerelease
     }
     Import-Module $seleniumModuleName
 
