@@ -18,6 +18,11 @@ ControlClick "Button1", WindowTitle,,,, "NA"
 WinWaitClose WindowTitle
 
 WinWait WindowTitle
+If WinExist(WindowTitle, "Not all folders could be removed.") {
+    ;The uninstaller will continue regardless - just dismiss the dialog.
+    ControlClick "Button1", WindowTitle,,,, "NA"
+    WinWait WindowTitle
+}
 ControlClick "Button1", WindowTitle,,,, "NA"
 
 ExitApp

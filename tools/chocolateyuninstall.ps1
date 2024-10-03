@@ -1,10 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+$softwareNamePattern = 'GoldWave v*'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
-  softwareName   = 'GoldWave v*'
+  softwareName   = $softwareNamePattern
   fileType       = 'EXE'
   validExitCodes = @(0)
 }
@@ -23,7 +24,12 @@ if ($keys.Count -eq 1) {
     $ahkScriptPath = Join-Path -Path $toolsDir -ChildPath 'uninstall.ahk'
 
     Start-Process -FilePath 'AutoHotKey.exe' -ArgumentList $ahkScriptPath
+    $appInstallLocation = Get-AppInstallLocation -AppNamePattern $softwareNamePattern
     Uninstall-ChocolateyPackage @packageArgs
+
+    if (Test-Path -Path $appInstallLocation) {
+      Write-Warning "The uninstaller supposedly completed successfully, but the install location ($appInstallLocation) still exists - this will need to be manually cleaned up."
+    }
   }
 }
 elseif ($keys.Count -eq 0) {
