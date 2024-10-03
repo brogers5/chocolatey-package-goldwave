@@ -20,13 +20,7 @@ if ($keys.Count -eq 1) {
 
     #GoldWave's uninstaller does not support a silent option.
     #Script an unattended uninstall with AutoHotkey.
-    $ahkVersion = (Get-Command -Name 'AutoHotKey.exe' -CommandType Application).Version
-    if ($ahkVersion -lt '2.0.0') {
-      $ahkScriptPath = Join-Path -Path $toolsDir -ChildPath 'uninstall_v1.ahk'
-    }
-    else {
-      $ahkScriptPath = Join-Path -Path $toolsDir -ChildPath 'uninstall_v2.ahk'
-    }
+    $ahkScriptPath = Join-Path -Path $toolsDir -ChildPath 'uninstall.ahk'
 
     Start-Process -FilePath 'AutoHotKey.exe' -ArgumentList $ahkScriptPath
     Uninstall-ChocolateyPackage @packageArgs

@@ -85,15 +85,14 @@ The uninstaller does not support a silent uninstallation option. This package de
     <releaseNotes>https://goldwave.ca/forums/viewforum.php?f=5</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.0.0" />
-      <dependency id="autohotkey.portable" version="1.1.22.07" />
+      <dependency id="autohotkey.portable" version="2.0.0" />
     </dependencies>
   </metadata>
   <files>
     <file src="tools\chocolateybeforemodify.ps1" target="tools" />
     <file src="tools\chocolateyinstall.ps1" target="tools" />
     <file src="tools\chocolateyuninstall.ps1" target="tools" />
-    <file src="tools\uninstall_v1.ahk" target="tools" />
-    <file src="tools\uninstall_v2.ahk" target="tools" />
+    <file src="tools\uninstall.ahk" target="tools" />
     <file src="tools\InstallGoldWave*.exe" target="tools" />
     <file src="tools\LICENSE.txt" target="tools" />
     <file src="tools\VERIFICATION.txt" target="tools" />
