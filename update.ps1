@@ -67,7 +67,7 @@ function global:au_GetLatest {
         FileName64 = "InstallGoldWave$($version.Replace('.', ''))"
         FileType   = 'exe'
         Url64      = $downloadUri
-        Version    = "$version.0" #This may change if building a package fix version
+        Version    = [version] "$version.0" #This may change if building a package fix version
     }
 }
 
