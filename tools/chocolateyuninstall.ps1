@@ -28,7 +28,7 @@ if ($keys.Count -eq 1) {
     Uninstall-ChocolateyPackage @packageArgs
 
     if (Test-Path -Path $appInstallLocation) {
-      Write-Warning "The uninstaller supposedly completed successfully, but the install location ($appInstallLocation) still exists - this will need to be manually cleaned up."
+      Write-Warning "The uninstaller supposedly completed successfully, but the install location ($appInstallLocation) still exists - some files and shortcuts may need to be manually cleaned up."
     }
   }
 }
