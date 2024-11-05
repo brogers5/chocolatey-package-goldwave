@@ -1,5 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+Confirm-Win10
+
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 $installerFileName = 'InstallGoldWave700.exe'
