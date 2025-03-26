@@ -27,6 +27,9 @@ if ($keys.Count -eq 1) {
     $appInstallLocation = Get-AppInstallLocation -AppNamePattern $softwareNamePattern
     Uninstall-ChocolateyPackage @packageArgs
 
+    #The uninstaller typically needs a couple more seconds to finish cleaning up files
+    Start-Sleep -Seconds 2
+
     if (Test-Path -Path $appInstallLocation) {
       Write-Warning "The uninstaller supposedly completed successfully, but the install location ($appInstallLocation) still exists - some files and shortcuts may need to be manually cleaned up."
     }
