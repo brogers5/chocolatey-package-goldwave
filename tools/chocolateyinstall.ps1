@@ -4,7 +4,7 @@ Confirm-Win10
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
-$installerFileName = 'InstallGoldWave705.exe'
+$installerFileName = 'InstallGoldWave707.exe'
 $filePath = Join-Path -Path $toolsDir -ChildPath $installerFileName
 $softwareNamePattern = 'GoldWave v*'
 
