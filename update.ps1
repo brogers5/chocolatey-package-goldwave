@@ -27,6 +27,16 @@ function New-Snapshot {
 function global:au_BeforeUpdate ($Package) {
     Get-RemoteFiles -Purge -FileNameBase $Latest.FileName64 -NoSuffix -Algorithm sha256
 
+    $downloadedFile = Join-Path -Path $toolsPath -ChildPath "$($Latest.FileName64)"
+    if (!(Test-Path -Path $downloadedFile -PathType Leaf)) {
+        throw "Downloaded installer was not found at '$downloadedFile'."
+    }
+
+    $fileHeader = [System.IO.File]::ReadAllBytes($downloadedFile)[0..1]
+    if ($fileHeader[0] -ne 0x4D -or $fileHeader[1] -ne 0x5A) {
+        throw "The downloaded installer '$downloadedFile' is not a Windows executable! The download request may have returned a monthly download exceeded page."
+    }
+
     New-Snapshot
 
     Copy-Item -Path "$toolsPath\VERIFICATION.txt.template" -Destination "$toolsPath\VERIFICATION.txt" -Force
