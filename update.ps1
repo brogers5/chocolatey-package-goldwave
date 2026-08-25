@@ -19,7 +19,15 @@ function New-Snapshot {
     $seleniumDriver = Start-SeFirefox -Headless
     $seleniumDriver.Manage().Timeouts().PageLoad = [TimeSpan]::FromMinutes(2)
     $seleniumDriver.Navigate().GoToUrl($downloadUrl)
-    $Latest.ArchivedBinaryUrl = $seleniumDriver.Url
+    $archivedUrl = $seleniumDriver.Url
+    
+    $expectedArchivedUrlPattern = '^https://web\.archive\.org/web/\d{14}/' + [regex]::Escape($Latest.Url64) + '$'
+    if ($archivedUrl -notmatch $expectedArchivedUrlPattern) {
+        $seleniumDriver.Dispose()
+        throw "Wayback Machine request did not return an archived URL! Received '$archivedUrl'."
+    }
+
+    $Latest.ArchivedBinaryUrl = $archivedUrl
     $Latest.DirectArchivedBinaryUrl = $Latest.ArchivedBinaryUrl -replace '(\d{14})/', "`$1if_/"
     $seleniumDriver.Dispose()
 }
