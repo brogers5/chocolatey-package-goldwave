@@ -16,7 +16,9 @@ function New-Snapshot {
 
     $downloadUrl = "https://web.archive.org/save/$($Latest.Url64)"
     Write-Output "Starting Selenium at $downloadUrl"
-    $seleniumDriver = Start-SeFirefox $downloadUrl -Headless
+    $seleniumDriver = Start-SeFirefox -Headless
+    $seleniumDriver.Manage().Timeouts().PageLoad = [TimeSpan]::FromMinutes(2)
+    $seleniumDriver.Navigate().GoToUrl($downloadUrl)
     $Latest.ArchivedBinaryUrl = $seleniumDriver.Url
     $Latest.DirectArchivedBinaryUrl = $Latest.ArchivedBinaryUrl -replace '(\d{14})/', "`$1if_/"
     $seleniumDriver.Dispose()
