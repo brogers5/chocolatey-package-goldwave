@@ -4,9 +4,9 @@ $currentPath = (Split-Path $MyInvocation.MyCommand.Definition)
 $nuspecFileRelativePath = Join-Path -Path $currentPath -ChildPath 'goldwave.nuspec'
 
 $global:Latest = @{
-    FileName64 = 'InstallGoldWave708'
+    FileName64 = 'InstallGoldWave709'
     FileType   = 'exe'
-    Url64      = 'https://web.archive.org/web/20260825160818if_/https://goldwave.com/download.php?file=gw'
+    Url64      = 'https://web.archive.org/web/20260929162919if_/https://goldwave.com/download.php?file=gw'
 }
 
 Write-Output 'Downloading...'
